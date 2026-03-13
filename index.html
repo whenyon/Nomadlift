@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NomadLift | Portable Laptop Stand</title>
-  <meta name="description" content="Portable laptop stand for students, remote workers, and travelers. Improve posture and work comfortably anywhere." />
+  <title>WealthSprint Bundle</title>
+  <meta name="description" content="A digital bundle with a budget tracker, net worth dashboard, savings calculator, and student finance planner." />
   <style>
     :root {
-      --bg: #f6f7fb;
+      --bg: #f7f8fc;
       --card: #ffffff;
-      --text: #16181d;
+      --text: #141822;
       --muted: #667085;
       --line: #e7eaf0;
       --dark: #111827;
       --accent: #111827;
-      --accent-2: #f3f4f6;
+      --soft: #eef2ff;
       --success: #166534;
-      --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
-      --radius: 18px;
+      --shadow: 0 10px 30px rgba(17,24,39,.08);
+      --radius: 20px;
       --max: 1120px;
     }
-
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
@@ -30,552 +28,91 @@
       color: var(--text);
       line-height: 1.55;
     }
-
-    img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-    }
-
+    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
     .topbar {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      font-size: 14px;
-      padding: 10px 16px;
-      letter-spacing: 0.2px;
+      background: var(--dark); color: white; text-align: center; padding: 10px 16px; font-size: 14px;
     }
-
     .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(246, 247, 251, 0.88);
-      border-bottom: 1px solid rgba(231, 234, 240, 0.8);
+      background: rgba(247,248,252,.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20;
     }
-
     .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      min-height: 72px;
+      min-height: 72px; display: flex; align-items: center; justify-content: space-between;
     }
-
-    .brand {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
+    .brand { font-size: 24px; font-weight: 900; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 14px 22px;
+      background: var(--accent); color: white; font-weight: 800; box-shadow: var(--shadow);
     }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .button, button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: 0;
-      border-radius: 999px;
-      padding: 14px 22px;
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      transition: transform 0.18s ease, opacity 0.18s ease;
-    }
-
-    .button:hover, button:hover { transform: translateY(-1px); }
-    .button.secondary {
-      background: white;
-      color: var(--text);
-      border: 1px solid var(--line);
-      box-shadow: none;
-    }
-
-    .hero {
-      padding: 56px 0 32px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.95fr;
-      gap: 28px;
-      align-items: center;
-    }
-
+    .button.secondary { background: white; color: var(--text); border: 1px solid var(--line); box-shadow: none; }
+    .hero { padding: 54px 0 30px; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center; }
     .eyebrow {
-      display: inline-block;
-      background: #e9eefc;
-      color: #243b84;
-      border: 1px solid #d9e3ff;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 16px;
+      display: inline-block; background: var(--soft); color: #233876; border: 1px solid #dbe4ff; padding: 8px 12px; border-radius: 999px; font-size: 13px; font-weight: 800; margin-bottom: 16px;
     }
-
-    h1 {
-      font-size: clamp(36px, 5vw, 62px);
-      line-height: 1.02;
-      margin: 0 0 16px;
-      letter-spacing: -1.8px;
+    h1 { font-size: clamp(38px, 5vw, 60px); line-height: 1.02; letter-spacing: -1.8px; margin: 0 0 16px; }
+    .hero p { color: var(--muted); font-size: 18px; margin: 0 0 24px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+    .trust { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow); padding: 18px;
     }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 18px;
-      margin: 0 0 24px;
-      max-width: 58ch;
+    .mockup {
+      aspect-ratio: 1 / 1; border-radius: 22px; background: linear-gradient(135deg,#fff 0%,#eef2ff 100%); border: 1px solid var(--line); padding: 18px; display: grid; gap: 12px;
     }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 20px;
+    .sheet {
+      background: white; border: 1px solid var(--line); border-radius: 16px; padding: 14px; box-shadow: 0 6px 18px rgba(17,24,39,.05);
     }
-
-    .trust-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .hero-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-
-    .product-image {
-      aspect-ratio: 1 / 1;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #ffffff 0%, #edf2ff 100%);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border: 1px solid #edf0f5;
-      position: relative;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .badge-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .badge {
-      background: #fafbff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 12px;
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .section {
-      padding: 34px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 22px;
-    }
-
-    .section-title h2 {
-      margin: 0 0 10px;
-      font-size: clamp(28px, 4vw, 42px);
-      letter-spacing: -1px;
-    }
-
-    .section-title p {
-      margin: 0 auto;
-      color: var(--muted);
-      max-width: 65ch;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .feature-card,
-    .review,
-    .faq-item,
-    .policy-card,
-    .spec-card,
-    .buy-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .feature-card {
-      padding: 22px;
-    }
-
-    .feature-card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-
-    .feature-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .buy-section {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .spec-card {
-      padding: 24px;
-    }
-
-    .spec-card h3 {
-      margin-top: 0;
-      font-size: 28px;
-      letter-spacing: -0.8px;
-    }
-
-    .spec-sub {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .bullet-list {
-      display: grid;
-      gap: 12px;
-      margin: 20px 0;
-    }
-
-    .bullet {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .check {
-      width: 24px;
-      height: 24px;
-      border-radius: 999px;
-      background: #eaf7ee;
-      color: var(--success);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      flex: 0 0 auto;
-      margin-top: 1px;
-    }
-
-    .bullet strong {
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .bullet span {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .mini-specs {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .mini-spec {
-      background: #fafbff;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 14px;
-    }
-
-    .mini-spec .label {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 6px;
-    }
-
-    .mini-spec .value {
-      font-weight: 800;
-      font-size: 15px;
-    }
-
-    .buy-card {
-      padding: 22px;
-      position: sticky;
-      top: 96px;
-    }
-
-    .rating {
-      color: #f59e0b;
-      font-size: 15px;
-      margin-bottom: 8px;
-      font-weight: 700;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: flex-end;
-      gap: 10px;
-      margin: 10px 0 6px;
-    }
-
-    .price {
-      font-size: 38px;
-      line-height: 1;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .compare-price {
-      color: var(--muted);
-      text-decoration: line-through;
-      font-weight: 700;
-      margin-bottom: 3px;
-    }
-
-    .save-tag {
-      display: inline-block;
-      margin-top: 8px;
-      background: #ebfff2;
-      color: #166534;
-      font-size: 13px;
-      font-weight: 800;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid #ccefd7;
-    }
-
-    .buy-card .button {
-      width: 100%;
-      margin: 16px 0 14px;
-      padding: 16px 22px;
-      font-size: 16px;
-    }
-
-    .buy-points {
-      display: grid;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .buy-points div {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .review {
-      padding: 22px;
-    }
-
-    .review p {
-      margin: 10px 0 14px;
-      color: var(--muted);
-    }
-
-    .review strong {
-      display: block;
-    }
-
-    .faq {
-      display: grid;
-      gap: 14px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      padding: 20px;
-    }
-
-    .faq-item h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-
-    .faq-item p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .policy-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .policy-card {
-      padding: 20px;
-    }
-
-    .policy-card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-
-    .policy-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .cta {
-      padding: 18px 0 46px;
-    }
-
-    .cta-box {
-      background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-      color: white;
-      border-radius: 28px;
-      padding: 32px;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .cta-box h2 {
-      margin: 0 0 8px;
-      font-size: clamp(26px, 4vw, 38px);
-      letter-spacing: -1px;
-    }
-
-    .cta-box p {
-      margin: 0;
-      color: rgba(255,255,255,0.78);
-      max-width: 60ch;
-    }
-
-    footer {
-      background: var(--dark);
-      color: rgba(255,255,255,0.82);
-      padding: 34px 0 38px;
-      margin-top: 10px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 20px;
-    }
-
-    footer h3 {
-      color: white;
-      margin: 0 0 12px;
-      font-size: 18px;
-    }
-
-    footer p, footer li {
-      margin: 0;
-      color: rgba(255,255,255,0.75);
-      font-size: 15px;
-    }
-
-    footer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 8px;
-    }
-
-    .footer-note {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      margin-top: 22px;
-      padding-top: 18px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.62);
-    }
-
+    .sheet h3 { margin: 0 0 8px; font-size: 16px; }
+    .bars { display: grid; gap: 8px; }
+    .bar { height: 12px; border-radius: 999px; background: #e9eefc; overflow: hidden; }
+    .bar span { display: block; height: 100%; background: #111827; }
+    .section { padding: 34px 0; }
+    .section-title { text-align: center; margin-bottom: 22px; }
+    .section-title h2 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 42px); letter-spacing: -1px; }
+    .section-title p { margin: 0 auto; color: var(--muted); max-width: 64ch; }
+    .grid-4, .grid-3 { display: grid; gap: 16px; }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .info-card, .price-card, .faq-item, .testimonial { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .info-card, .testimonial, .faq-item { padding: 22px; }
+    .info-card h3, .testimonial h3, .faq-item h3 { margin: 0 0 8px; }
+    .info-card p, .testimonial p, .faq-item p { margin: 0; color: var(--muted); }
+    .pricing-wrap { display: grid; grid-template-columns: 1fr 420px; gap: 22px; align-items: start; }
+    .details { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
+    .details h3 { margin-top: 0; font-size: 30px; letter-spacing: -.8px; }
+    .bullet { display: flex; gap: 12px; margin: 14px 0; }
+    .check { width: 24px; height: 24px; border-radius: 999px; background: #eaf7ee; color: var(--success); display: grid; place-items: center; font-weight: 900; flex: 0 0 auto; }
+    .bullet div span { color: var(--muted); font-size: 15px; display: block; }
+    .price-card { padding: 22px; position: sticky; top: 92px; }
+    .rating { color: #f59e0b; font-weight: 800; font-size: 15px; }
+    .price-row { display: flex; align-items: flex-end; gap: 10px; margin: 10px 0 6px; }
+    .price { font-size: 40px; font-weight: 900; line-height: 1; letter-spacing: -1px; }
+    .compare { text-decoration: line-through; color: var(--muted); font-weight: 700; margin-bottom: 4px; }
+    .tag { display: inline-block; margin-top: 8px; background: #ebfff2; color: #166534; border: 1px solid #ccefd7; border-radius: 999px; padding: 8px 10px; font-size: 13px; font-weight: 800; }
+    .price-card .button { width: 100%; margin: 16px 0 14px; }
+    .small { color: var(--muted); font-size: 14px; }
+    .list { display: grid; gap: 10px; color: var(--muted); font-size: 14px; }
+    .cta { padding: 18px 0 44px; }
+    .cta-box { background: linear-gradient(135deg,#111827 0%,#1f2937 100%); color: white; border-radius: 28px; box-shadow: var(--shadow); padding: 30px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .cta-box p { color: rgba(255,255,255,.78); margin: 8px 0 0; }
+    footer { background: var(--dark); color: rgba(255,255,255,.78); padding: 34px 0 38px; margin-top: 8px; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 20px; }
+    footer h3 { color: white; margin: 0 0 12px; }
+    footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .footer-note { border-top: 1px solid rgba(255,255,255,.12); margin-top: 22px; padding-top: 18px; font-size: 14px; color: rgba(255,255,255,.62); }
     @media (max-width: 980px) {
-      .hero-grid,
-      .buy-section,
-      .feature-grid,
-      .reviews-grid,
-      .policy-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .buy-card {
-        position: static;
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero { padding-top: 32px; }
-      .nav-inner { min-height: 64px; }
-      .badge-row,
-      .mini-specs {
-        grid-template-columns: 1fr;
-      }
-      .cta-box {
-        padding: 24px;
-      }
+      .hero-grid, .pricing-wrap, .grid-4, .grid-3, .footer-grid { grid-template-columns: 1fr; }
+      .price-card { position: static; }
     }
   </style>
 </head>
 <body>
-  <div class="topbar">Free shipping today • 30-day money-back guarantee • Secure checkout</div>
-
+  <div class="topbar">Instant delivery • No shipping delays • Lifetime access</div>
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">NomadLift</div>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#product">Product</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#faq">FAQ</a>
-      </div>
-      <a class="button secondary" href="#buy">Buy Now</a>
+      <div class="brand">WealthSprint</div>
+      <a class="button secondary" href="#buy">Get the Bundle</a>
     </div>
   </nav>
 
@@ -583,197 +120,105 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Portable setup essential for students, travelers, and remote workers</div>
-          <h1>Work anywhere without neck pain.</h1>
-          <p>
-            NomadLift raises your laptop to eye level so you can sit better, work longer, and stay comfortable whether you are in class, at a coffee shop, or at your desk.
-          </p>
-          <div class="hero-actions">
-            <a class="button" href="#buy">Get NomadLift</a>
-            <a class="button secondary" href="#reviews">See Reviews</a>
+          <div class="eyebrow">Digital product store starter</div>
+          <h1>Sell one bundle, keep almost all the profit.</h1>
+          <p>The WealthSprint Bundle helps students and young professionals budget better, track net worth, plan savings goals, and organize money in one simple system.</p>
+          <div class="actions">
+            <a class="button" href="#buy">Buy for $29</a>
+            <a class="button secondary" href="#inside">See What’s Included</a>
           </div>
-          <div class="trust-row">
-            <span>✓ Lightweight aluminum</span>
-            <span>✓ Fits laptops up to 17”</span>
-            <span>✓ Folds flat in seconds</span>
+          <div class="trust">
+            <span>✓ Instant download</span>
+            <span>✓ Works in Google Sheets / Excel</span>
+            <span>✓ No subscriptions</span>
           </div>
         </div>
-
-        <div class="hero-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Laptop setup on a clean desk" />
-          </div>
-          <div class="badge-row">
-            <div class="badge">Ergonomic Lift</div>
-            <div class="badge">Travel Ready</div>
-            <div class="badge">Fast Setup</div>
+        <div class="card">
+          <div class="mockup">
+            <div class="sheet">
+              <h3>Monthly Budget Dashboard</h3>
+              <div class="bars">
+                <div class="bar"><span style="width:78%"></span></div>
+                <div class="bar"><span style="width:55%"></span></div>
+                <div class="bar"><span style="width:88%"></span></div>
+              </div>
+            </div>
+            <div class="sheet">
+              <h3>Net Worth Tracker</h3>
+              <div class="bars">
+                <div class="bar"><span style="width:45%"></span></div>
+                <div class="bar"><span style="width:62%"></span></div>
+                <div class="bar"><span style="width:72%"></span></div>
+              </div>
+            </div>
+            <div class="sheet">
+              <h3>Savings Goal Calculator</h3>
+              <div class="bars">
+                <div class="bar"><span style="width:31%"></span></div>
+                <div class="bar"><span style="width:65%"></span></div>
+                <div class="bar"><span style="width:92%"></span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section" id="inside">
       <div class="container">
         <div class="section-title">
-          <h2>Why people buy NomadLift</h2>
-          <p>It is designed to solve the exact problems laptop users deal with every day: neck strain, bad posture, overheating, and awkward desk setups.</p>
+          <h2>What’s inside the bundle</h2>
+          <p>This is built to be a simple digital product you can sell instantly with no inventory, no shipping, and no supplier risk.</p>
         </div>
-
-        <div class="feature-grid">
-          <div class="feature-card">
-            <h3>Better posture</h3>
-            <p>Raises your screen to a more natural height so you stop hunching forward over your laptop.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Ultra portable</h3>
-            <p>Folds flat and slips into a backpack, tote, or laptop sleeve without taking up space.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Strong and stable</h3>
-            <p>Durable aluminum construction holds your laptop securely while anti-slip pads keep it in place.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Clean workspace</h3>
-            <p>Creates better airflow under your laptop and gives your setup a cleaner, more organized look.</p>
-          </div>
+        <div class="grid-4">
+          <div class="info-card"><h3>Budget tracker</h3><p>Track monthly income, fixed expenses, variable spending, and leftover cash automatically.</p></div>
+          <div class="info-card"><h3>Net worth dashboard</h3><p>See assets, debts, and long-term progress in one clean place.</p></div>
+          <div class="info-card"><h3>Savings calculator</h3><p>Estimate how quickly a user can hit a savings or investing target.</p></div>
+          <div class="info-card"><h3>Student finance planner</h3><p>Plan rent, groceries, subscriptions, school costs, and semester budgeting.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="product">
-      <div class="container buy-section">
-        <div class="spec-card">
-          <h3>NomadLift Portable Laptop Stand</h3>
-          <div class="spec-sub">A minimal, sturdy stand built to improve posture and make any workspace feel better instantly.</div>
-
-          <div class="bullet-list">
-            <div class="bullet">
-              <div class="check">✓</div>
-              <div>
-                <strong>Ergonomic viewing angle</strong>
-                <span>Helps reduce neck and shoulder strain during long study or work sessions.</span>
-              </div>
-            </div>
-            <div class="bullet">
-              <div class="check">✓</div>
-              <div>
-                <strong>Works almost anywhere</strong>
-                <span>Ideal for dorm rooms, coffee shops, offices, libraries, and travel days.</span>
-              </div>
-            </div>
-            <div class="bullet">
-              <div class="check">✓</div>
-              <div>
-                <strong>Quick fold design</strong>
-                <span>Open it in seconds and pack it away just as fast when you are done.</span>
-              </div>
-            </div>
-            <div class="bullet">
-              <div class="check">✓</div>
-              <div>
-                <strong>Universal fit</strong>
-                <span>Supports most laptops from 10 to 17 inches with a steady non-slip grip.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mini-specs">
-            <div class="mini-spec">
-              <span class="label">Material</span>
-              <span class="value">Lightweight aluminum alloy</span>
-            </div>
-            <div class="mini-spec">
-              <span class="label">Compatibility</span>
-              <span class="value">10” to 17” laptops</span>
-            </div>
-            <div class="mini-spec">
-              <span class="label">Use case</span>
-              <span class="value">Study, work, travel</span>
-            </div>
-            <div class="mini-spec">
-              <span class="label">In the box</span>
-              <span class="value">1x NomadLift stand</span>
-            </div>
-          </div>
+    <section class="section">
+      <div class="container pricing-wrap">
+        <div class="details">
+          <h3>WealthSprint Bundle</h3>
+          <p class="small">A beginner-friendly digital bundle designed to help people get their money organized fast.</p>
+          <div class="bullet"><div class="check">✓</div><div><strong>Editable templates</strong><span>Customize the spreadsheets and planner pages in minutes.</span></div></div>
+          <div class="bullet"><div class="check">✓</div><div><strong>Instant delivery</strong><span>Customers get access right after checkout. Nothing to ship.</span></div></div>
+          <div class="bullet"><div class="check">✓</div><div><strong>High-margin business model</strong><span>Once created, every extra sale is mostly profit.</span></div></div>
+          <div class="bullet"><div class="check">✓</div><div><strong>Simple to market</strong><span>Easy to promote on TikTok, Reels, Shorts, and finance-focused content.</span></div></div>
         </div>
-
-        <aside class="buy-card" id="buy">
-          <div class="rating">★★★★★ 4.8/5 from 1,200+ buyers</div>
-          <h3 style="margin:0 0 6px; font-size:26px;">NomadLift</h3>
-          <div style="color: var(--muted); font-size: 15px;">Portable Laptop Stand</div>
-
+        <aside class="price-card" id="buy">
+          <div class="rating">★★★★★ 4.9/5 starter layout</div>
+          <h3 style="margin:0 0 6px;font-size:26px;">WealthSprint Bundle</h3>
+          <div class="small">Budget + net worth + savings tools</div>
           <div class="price-row">
-            <div class="price">$29.99</div>
-            <div class="compare-price">$49.99</div>
+            <div class="price">$29</div>
+            <div class="compare">$79</div>
           </div>
-          <div class="save-tag">Save 40% today</div>
-
-          <a class="button" href="https://buy.stripe.com/your-link-here" target="_blank" rel="noopener noreferrer">Buy Now</a>
-
-          <div class="buy-points">
-            <div>🔒 Secure checkout</div>
-            <div>🚚 Ships in 1–3 business days</div>
-            <div>↩ 30-day money-back guarantee</div>
-            <div>📦 Delivery estimate: 6–10 business days</div>
+          <div class="tag">Launch discount live now</div>
+          <a class="button" href="https://your-checkout-link-here.com" target="_blank" rel="noopener noreferrer">Get Instant Access</a>
+          <div class="list">
+            <div>⚡ Instant digital delivery</div>
+            <div>📥 Download immediately after payment</div>
+            <div>♾ Lifetime access</div>
+            <div>💻 Works on desktop and laptop</div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="section" id="reviews">
+    <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>What customers are saying</h2>
-          <p>These are sample reviews for your starter site. Replace them with real customer feedback as you begin making sales.</p>
+          <h2>Who this is for</h2>
+          <p>Use this section to position the bundle for a specific audience. That makes marketing much easier.</p>
         </div>
-
-        <div class="reviews-grid">
-          <div class="review">
-            <div class="rating">★★★★★</div>
-            <p>“I use this in the library and at coffee shops all the time. Super easy to carry and my neck feels way better.”</p>
-            <strong>Emma R.</strong>
-            <span style="color: var(--muted); font-size: 14px;">Student</span>
-          </div>
-          <div class="review">
-            <div class="rating">★★★★★</div>
-            <p>“Simple product but honestly one of the best desk accessories I have bought. Makes my setup feel cleaner too.”</p>
-            <strong>Jake T.</strong>
-            <span style="color: var(--muted); font-size: 14px;">Remote worker</span>
-          </div>
-          <div class="review">
-            <div class="rating">★★★★★</div>
-            <p>“I travel a lot and needed something light that actually feels stable. This does the job perfectly.”</p>
-            <strong>Daniel M.</strong>
-            <span style="color: var(--muted); font-size: 14px;">Consultant</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-title">
-          <h2>Frequently asked questions</h2>
-          <p>Use this section to reduce objections and make the store feel more trustworthy.</p>
-        </div>
-
-        <div class="faq">
-          <div class="faq-item">
-            <h3>How long does shipping take?</h3>
-            <p>Orders are typically processed in 1 to 3 business days and delivered within 6 to 10 business days, depending on destination.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Will it fit my laptop?</h3>
-            <p>Yes. NomadLift is designed to support most laptops from 10 to 17 inches.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What if I do not like it?</h3>
-            <p>You can return it within 30 days of delivery for a full refund. The product must be in good condition.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Is checkout secure?</h3>
-            <p>Yes. Your payment is processed securely through your checkout provider, such as Stripe or PayPal.</p>
-          </div>
+        <div class="grid-3">
+          <div class="testimonial"><h3>Students</h3><p>Ideal for people trying to manage rent, food, subscriptions, and class expenses without feeling lost.</p></div>
+          <div class="testimonial"><h3>Young professionals</h3><p>Useful for building savings discipline, tracking paychecks, and getting serious about net worth.</p></div>
+          <div class="testimonial"><h3>Anyone starting out</h3><p>Simple enough for beginners but still polished enough to feel like a premium product.</p></div>
         </div>
       </div>
     </section>
@@ -781,23 +226,13 @@
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Store policies</h2>
-          <p>These sections make the site look much more legitimate and help answer the questions buyers usually have before purchasing.</p>
+          <h2>Frequently asked questions</h2>
+          <p>These are the usual objections people have before buying a digital product.</p>
         </div>
-
-        <div class="policy-grid">
-          <div class="policy-card">
-            <h3>Shipping policy</h3>
-            <p>Orders are processed within 1 to 3 business days. Shipping time is usually 6 to 10 business days. Tracking is sent by email when available.</p>
-          </div>
-          <div class="policy-card">
-            <h3>Refund policy</h3>
-            <p>You may request a return within 30 days of delivery. Refunds are issued to the original payment method after the return is received and reviewed.</p>
-          </div>
-          <div class="policy-card">
-            <h3>Contact support</h3>
-            <p>Email support@nomadlift.co for order questions, return requests, or general help. Replace this with your real email before going live.</p>
-          </div>
+        <div class="grid-3">
+          <div class="faq-item"><h3>How do I receive it?</h3><p>Customers get a download link immediately after checkout and can save the files right away.</p></div>
+          <div class="faq-item"><h3>Do I have to ship anything?</h3><p>No. This is a digital product business, so delivery is automatic.</p></div>
+          <div class="faq-item"><h3>Can I edit the files?</h3><p>Yes. The bundle is designed to be editable in spreadsheet tools like Google Sheets and Excel.</p></div>
         </div>
       </div>
     </section>
@@ -806,10 +241,10 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>Upgrade your setup today</h2>
-            <p>Simple, portable, and designed to make working from anywhere feel better from the first use.</p>
+            <h2>Launch a higher-margin store</h2>
+            <p>This is the easier model: no shipping, no supplier, no inventory, and instant delivery after checkout.</p>
           </div>
-          <a class="button" href="#buy">Shop NomadLift</a>
+          <a class="button" href="#buy">Launch This Offer</a>
         </div>
       </div>
     </section>
@@ -819,28 +254,25 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h3>NomadLift</h3>
-          <p>Portable productivity gear for people who study, work, and travel with a laptop.</p>
+          <h3>WealthSprint</h3>
+          <p>Digital tools for budgeting, planning, and getting financially organized.</p>
         </div>
         <div>
           <h3>Quick links</h3>
           <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#product">Product</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#inside">What’s inside</a></li>
+            <li><a href="#buy">Pricing</a></li>
           </ul>
         </div>
         <div>
-          <h3>Contact</h3>
+          <h3>Support</h3>
           <ul>
-            <li>support@nomadlift.co</li>
-            <li>Mon–Fri, 9am–5pm</li>
-            <li>United States</li>
+            <li>support@wealthsprint.co</li>
+            <li>Digital delivery</li>
           </ul>
         </div>
       </div>
-      <div class="footer-note">© 2026 NomadLift. All rights reserved.</div>
+      <div class="footer-note">© 2026 WealthSprint. All rights reserved.</div>
     </div>
   </footer>
 </body>
